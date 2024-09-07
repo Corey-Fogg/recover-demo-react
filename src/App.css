@@ -1,38 +1,200 @@
-.App {
+/* General Page Layout */
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.title, .section-title {
   text-align: center;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.section-title {
+  font-size: 1.75em;
+  margin-top: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Card Grid Layout */
+.card-grid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+}
+
+/* Card Styling */
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.card p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Color Variants for Cards */
+.card.normal {
+  background-color: #d4edda;
+  border-color: #28a745;
+}
+
+.card.warned {
+  background-color: #fff5cc;
+  border-color: #ffc107;
+}
+
+.card.troubled {
+  background-color: #ffcccc;
+  border-color: #ff4d4d;
+}
+
+.card.parked {
+  background-color: #e0e0e0;
+  border-color: #b0b0b0;
+}
+
+.card.appliance, .card.vault {
+  background-color: #f0f8ff;
+  border-color: #007bff;
+}
+
+.card.device {
+  background-color: #e6f7ff;
+  border-color: #33a1ff;
+}
+
+/* Thumbnail Styling */
+.thumbnail-container {
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+/* Icon Styling for Top-Right Corner */
+.details-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #007bff;
+}
+
+.details-icon:hover {
+  color: #0056b3;
+}
+
+/* Button for Viewing Devices */
+.view-devices-button {
+  background-color: #007bff;
   color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.view-devices-button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Back Button Styling */
+.back-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #007bff;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+/* Client Status Counts (Horizontal) */
+.client-status-counts {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.client-status-counts .count-item {
+  text-align: center;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.client-status-counts .count-item p {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Color-coded numbers for client statuses */
+.client-status-counts .troubled {
+  color: #ff4d4d; /* Red for troubled clients */
+}
+
+.client-status-counts .warned {
+  color: #ffc107; /* Yellow for warned clients */
+}
+
+.client-status-counts .healthy {
+  color: #28a745; /* Green for healthy clients */
 }
